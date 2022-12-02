@@ -6,15 +6,17 @@ import PageLogin from "./components/PageLogin"
 import Header from "./components/Header";
 
 
+
 const connected_as_friend=false
 const connected_as_editor=false
 
 function App() {
   return (
     <>
-    <Header/>
-    <body>
     <Router>
+    
+    <Header/>
+    <div className="pagebody">
       <Routes>
       
       <Route path='/' exact element={<PageFeed/>}/>
@@ -22,9 +24,9 @@ function App() {
       <Route path='/about' exact element={<PageAbout/>}/>
       <Route path='/login' exact element={<PageLogin/>}/>
       </Routes>
-
+      </div>
     </Router>
-    </body>
+    
     </>
   );
 }

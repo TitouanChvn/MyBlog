@@ -1,0 +1,25 @@
+{
+  "Feed_content": [
+    {
+      "id": 1,
+      "title": "Titre1",
+      "author": "Titoutan",
+      "content": "Ici le contenu du post",
+      "image": "../images/image1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Titre2",
+      "author": "Titoutan",
+      "content": "Autre contenu de autre post",
+      "image": "../images/image1.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Titre3",
+      "author": "Editor2",
+      "content": "Contenu d'un autre editeur",
+      "image": "../images/image1.jpg"
+    }
+  ]
+}

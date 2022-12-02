@@ -1,9 +1,21 @@
 import React from 'react'
+import image from '../images/image1.jpg'
 
-const FeedElement = () => {
+
+const FeedElement = ({feedelement}) => {
+  
+  //const { logoUrl } = this.feedelement.image
+
   return (
-    <div>
-      Feed Element
+    
+    <div className='FeedElement'>
+        <h3>{feedelement.title}</h3>
+        <p>{feedelement.content}</p>
+        <p>{feedelement.author}</p>
+        <img src={image} alt="post" />
+"
+
+      
     </div>
   )
 }
