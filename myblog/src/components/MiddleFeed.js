@@ -7,7 +7,7 @@ const MiddleFeed = () => {
     useEffect(() => {
         const getElements = async () => {
             const listElements = await fetchElement()
-            //console.log("1",listElements)
+            console.log("1",listElements)
             setFeedElementsList(listElements)
         } 
         getElements()
@@ -16,11 +16,11 @@ const MiddleFeed = () => {
     },[])
 
     const fetchElement = async () => {
-        const res = await fetch('http://localhost:5000/Feed_content')
-        //console.log(res)
+        const res = await fetch('http://localhost:5000/feeddata')
+        console.log(res)
         const data = await res.json()
         //console.log("truc",data)
-        return data
+        return data.Feed_content  //we just need the content part of the json
     }
 
   return (
