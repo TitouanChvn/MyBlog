@@ -7,19 +7,19 @@ const MiddleFeed = () => {
     useEffect(() => {
         const getElements = async () => {
             const listElements = await fetchElement()
-            console.log("1",listElements)
+            //console.log("1",listElements)
             setFeedElementsList(listElements)
         } 
         getElements()
-        console.log("on a get")
+        //console.log("on a get")
         
     },[])
 
     const fetchElement = async () => {
         const res = await fetch('http://localhost:5000/Feed_content')
-        console.log(res)
+        //console.log(res)
         const data = await res.json()
-        console.log("truc",data)
+        //console.log("truc",data)
         return data
     }
 
