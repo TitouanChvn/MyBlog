@@ -1,4 +1,4 @@
-# Leap_Motion_Python
+# MyBlog
 Personnal blog made with React
 
 Here is a new React project : to make a personnal blog with React.
