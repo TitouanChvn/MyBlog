@@ -4,7 +4,7 @@ import RightFeed from "./RightFeed"
 const PageFeed = () => {
   return (
     <div className="PageFeed">
-      <div className="PageFeedTitle">page1</div>
+      <div className="PageFeedTitle"></div>
       <div className="columns">
         <MiddleFeed/>
         <RightFeed/>

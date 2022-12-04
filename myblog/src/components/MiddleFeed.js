@@ -27,7 +27,7 @@ const MiddleFeed = () => {
     
     <div className="middleFeed">
       MiddleFeed part
-      <div>
+      <div className="FeedElementList">
       {feedElementsList.map((feedelement,index) => (
         <FeedElement key={index} feedelement={feedelement}/>
       ))}

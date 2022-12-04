@@ -11,7 +11,8 @@ const FeedElement = ({feedelement}) => {
         <h3>{feedelement.title}</h3>
         <p>{feedelement.content}</p>
         <p>{feedelement.author}</p>
-        <img src={feedelement.image} alt="post" />      
+        <img src={feedelement.image} alt="post" />
+             
     </div>
   )
 }
