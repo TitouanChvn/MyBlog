@@ -8,18 +8,19 @@ const FeedElement = ({feedelement}) => {
   return (
     
     <div className='FeedElement'>
-      <div className="FeedElementTopPart">
-        <div className="FeedElementTopPartLeft">
+      <div className='FeedElementTopPart'>
+        <img src={feedelement.image} alt="post" />
         <h2>{feedelement.title}</h2>
         <p>{feedelement.date}</p>
-        <p>{feedelement.author}</p> 
+        <p>{feedelement.author}</p>
         <p>{feedelement.content}</p>
-        </div>  
-        <div className="FeedElementTopPartRight">
-        <img src={feedelement.image} alt="post" />
-        </div>
       </div>
-      <div className="FeedElementBottomPart"></div>
+        
+      <div className="FeedElementBottomPart">
+        <p>feedelement.comments</p>
+        <p>feedelement.likes</p>
+        <p>Button edit</p>
+      </div>
     </div>
   )
 }
