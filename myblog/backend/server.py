@@ -14,21 +14,32 @@ def feed_data():
       "title": "Titre1",
       "author": "Titoutan",
       "content": "Ici le contenu du post",
-      "image": "/images/imagepublic1.jpg"
+      "image": "/images/imagepublic1.jpg",
+      "date": "2020-01-01"
     },
     {
       "id": 2,
       "title": "Titre2",
       "author": "Titoutan",
       "content": "Autre contenu de autre post",
-      "image": "/images/imagepublic1.jpg"
+      "image": "/images/imagepublic1.jpg",
+      "date": "2020-01-01"
     },
     {
       "id": 3,
       "title": "Titre3",
       "author": "Editor2",
       "content": "Contenu d'un autre editeur",
-      "image": "/images/imagepublic1.jpg"
+      "image": "/images/imagepublic1.jpg",
+        "date": "2020-01-01"
+    },
+    {
+      "id": 3,
+      "title": "Encore un autre élément",
+      "author": "De Titoutan",
+      "content": " BEAUCOUP DE CONTENU BEAUCOUP DE CONTENU BEAUCOUP DE CONTENU BEAUCOUP DE CONTENU BEAUCOUP DE CONTENU BEAUCOUP DE CONTENU BEAUCOUP DE CONTENU BEAUCOUP DE CONTENU BEAUCOUP DE CONTENU BEAUCOUP DE CONTENU BEAUCOUP DE CONTENU BEAUCOUP DE CONTENU BEAUCOUP DE CONTENU BEAUCOUP DE CONTENU BEAUCOUP DE CONTENU BEAUCOUP DE CONTENU ",
+      "image": "/images/imagepublic1.jpg",
+        "date": "2020-01-01"
     }
   ]
 }
