@@ -177,6 +177,32 @@ code {
   min-height: auto;
 }
 
+.FeedElementTopPart{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.FeedElementTopPartLeft{
+  display: flex;
+  flex-direction: column;
+  justify-content : center;
+  
+  width: 50%;
+}
+
+.FeedElementBottomPart{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+
+
 
 
 img{
