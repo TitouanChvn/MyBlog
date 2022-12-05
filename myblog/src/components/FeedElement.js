@@ -10,17 +10,16 @@ const FeedElement = ({feedelement}) => {
     <div className='FeedElement'>
       <div className="FeedElementTopPart">
         <div className="FeedElementTopPartLeft">
-        <h3>{feedelement.title}</h3>
+        <h2>{feedelement.title}</h2>
         <p>{feedelement.date}</p>
-        <p>{feedelement.author}</p>
+        <p>{feedelement.author}</p> 
+        <p>{feedelement.content}</p>
         </div>  
         <div className="FeedElementTopPartRight">
         <img src={feedelement.image} alt="post" />
         </div>
       </div>
-      <div className="FeedElementBottomPart">
-        <p>{feedelement.content}</p>
-      </div>
+      <div className="FeedElementBottomPart"></div>
     </div>
   )
 }
