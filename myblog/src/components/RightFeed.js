@@ -1,6 +1,9 @@
 import { useState,useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 
 const RightFeed = () => {
+  const navigate = useNavigate();
+  const handleClick = () => navigate('/CreatePost');
 
   const [login_id, setlogin_id] = useState([])
   
@@ -26,9 +29,12 @@ const RightFeed = () => {
 
   return (
     <div className="rightFeed">
-      RightFeed part
+      <button className="ButtonRightFeed" onClick={handleClick}>
+        Nouveau Post
+      </button>
+      <p>RightFeed part</p>
       <br/>
-      Login id is {login_id.login}
+      <p>Login id is {login_id.login}</p>
     </div>
   )
 }
