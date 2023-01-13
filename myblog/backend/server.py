@@ -16,7 +16,13 @@ def data_from_database():
     return {
         'Feed_content': [dict(id=row[0], title=row[1], author=row[2], content=row[3], image=row[4], date=row[5]) for row in list.fetchall()]
     }
-    
+
+
+@app.route('/login', methods=['GET','POST'])
+@cross_origin()
+def login_id():
+    return {'Log': {'login' : '1'}}
+
 
 
 if __name__ == '__main__':

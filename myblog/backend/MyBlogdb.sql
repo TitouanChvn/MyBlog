@@ -10,8 +10,12 @@ date VARCHAR NOT NULL
 
 
 INSERT INTO Feedcontent VALUES(1, 'TitreExemple1', 'Titoutan','Content for the first element', "/images/imagepublic1.jpg","2020-01-01" );
-INSERT INTO Feedcontent VALUES(2, 'TitreExemple2', 'Titoutan2', 'Content for the Second element',"/images/imagepublic1.jpg","2020-01-01");
+INSERT INTO Feedcontent VALUES(2, 'TitreExemple2', 'Titoutan2', 'Content for the Second element',"/images/imagepublic2.jpg","2020-01-01");
 INSERT INTO Feedcontent VALUES(3, 'TitreExemple3', 'Titoutan', 'A LOT OF CONTENT A LOT OF CONTENT A LOT OF CONTENT A LOT OF CONTENT A LOT OF CONTENT A LOT OF CONTENT A LOT OF CONTENT A LOT OF CONTENT A LOT OF CONTENT A LOT OF CONTENT A LOT OF CONTENT A LOT OF CONTENT A LOT OF CONTENT A LOT OF CONTENT A LOT OF CONTENT A LOT OF CONTENT A LOT OF CONTENT A LOT OF CONTENT A LOT OF CONTENT A LOT OF CONTENT A LOT OF CONTENT A LOT OF CONTENT A LOT OF CONTENT A LOT OF CONTENT A LOT OF CONTENT A LOT OF CONTENT ', "/images/imagepublic1.jpg","2020-01-01");
 
 
-
+CREATE TABLE Users (
+    id INTEGER PRIMARYKEY,
+    username VARCHAR NOT NULL,
+    password VARCHAR NOT NULL
+);

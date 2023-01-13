@@ -7,7 +7,7 @@ const MiddleFeed = () => {
     useEffect(() => {
         const getElements = async () => {
             const listElements = await fetchElement()
-            console.log("1",listElements)
+            //console.log("1",listElements)
             setFeedElementsList(listElements)
         } 
         getElements()
