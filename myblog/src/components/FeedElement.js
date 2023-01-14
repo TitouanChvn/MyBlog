@@ -17,6 +17,30 @@ const FeedElement = ({feedelement}) => {
       setImgPleinEcran(null);
     }
   }
+
+  const handleClickDelete = async event => {
+    console.log("delete")
+    //get id of the post
+    //console.log(feedelement.id)
+    const formData = new FormData();
+    formData.append('id', feedelement.id);
+    try {
+      console.log(JSON.stringify({id: feedelement.id}))
+      const response = await fetch('http://localhost:5000/deletePost', {
+        method: 'POST',
+        body: formData,
+      });
+      console.log(response);
+      //update the feed
+      window.location.reload(); //reload the whole page, might be a better way to do it
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+    
+  }
   
   return (
     
@@ -32,7 +56,9 @@ const FeedElement = ({feedelement}) => {
       <div className="FeedElementBottomPart">
         <p>feedelement.comments</p>
         <p>feedelement.likes</p>
-        <p>Button edit</p>
+        <button className="ButtonRightFeed" onClick={handleClickDelete}>
+          Delete
+        </button>
       </div>
       {imgPleinEcran!=null && createPortal(
       <div className="dark-background" onClick={() => handleImgPleinEcran(null)}>

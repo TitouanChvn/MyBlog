@@ -5,7 +5,7 @@ import os
 
 
 app = Flask(__name__)
-CORS(app, resources={r"/posts": {"origins": "http://localhost:3000"}})
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 def get_free_post_id():
     conn = sqlite3.connect('backend\MyBlogdb.db')
@@ -70,6 +70,24 @@ def posts():
     conn.commit()
     conn.close()
     return '', 204
+
+
+@app.route('/deletePost', methods=['POST'])
+@cross_origin()
+def deletePost():
+    if request.method == 'POST':
+        id = request.form['id']
+        print(id)
+        conn=sqlite3.connect('backend\MyBlogdb.db')
+        conn.execute('DELETE FROM Feedcontent WHERE id=?', (id,))
+        conn.commit()
+        conn.close()
+        try:
+            os.remove(f"public\images\{id}.jpg")
+        except:
+            pass
+        
+        return '', 204
 
 
 if __name__ == '__main__':
