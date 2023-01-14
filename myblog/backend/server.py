@@ -1,11 +1,26 @@
-from flask import Flask
+from flask import Flask,request
 from flask_cors import CORS,cross_origin
 import sqlite3
+import os
 
 
 app = Flask(__name__)
-cors = CORS(app)
+CORS(app, resources={r"/posts": {"origins": "http://localhost:3000"}})
 
+def get_free_post_id():
+    conn = sqlite3.connect('backend\MyBlogdb.db')
+    list = conn.execute('SELECT * FROM Feedcontent')
+    id_used=[]
+    new=1
+    for row in list.fetchall():
+        id_used.append(row[0])
+    id_used.sort()
+    #print(id_used)
+    while new in id_used:
+        new+=1    
+    return new
+
+        
 
 
 @app.route('/feeddata', methods=['GET','POST'])
@@ -23,6 +38,38 @@ def data_from_database():
 def login_id():
     return {'Log': {'login' : '1'}}
 
+
+@app.route('/posts', methods=['GET','POST'])
+@cross_origin()
+def posts():
+    if request.method == 'POST':
+        title = request.form['title']
+        author = request.form['author']
+        content = request.form['description']
+        image = request.files['image']
+        date = request.form['date']
+        print(title)
+        print(author)
+        print(content)
+        print(image)
+        print(date)
+    id = get_free_post_id()
+    if image:
+        filename = image.filename
+        #if file already exists in the folder, delete it
+        try:
+            os.remove(f"public\images\{id}.jpg")
+        except:
+            pass
+        image.save(f"public\images\{id}.jpg")
+        image_path_saved="images\\"+str(id)+".jpg"
+    print(title, author, content, image, date)
+    conn = sqlite3.connect('backend\MyBlogdb.db')
+    #create a new post in the database
+    conn.execute('INSERT INTO Feedcontent (id,title, author, content, image, date) VALUES (?,?,?,?,?,?)', (id,title, author, content,image_path_saved, date))
+    conn.commit()
+    conn.close()
+    return '', 204
 
 
 if __name__ == '__main__':
